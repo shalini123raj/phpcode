@@ -7,15 +7,26 @@
 </head>
 <body>
 <?php
-$txt1 = "shalini kumari";
-$txt2 = "patna";
-$x = "John";
-$y = "rani";
-echo "Hello $x";
-echo "Hello $x";
+// function printReverseNums($n) {
+//     for ($i = $n; $i >= 1; $i--) {
+//         echo $i . " ";
+//     }
+// }
 
-echo "<h2>$txt1</h2>";
-echo "<p>Study PHP at $txt2</p>";
+// printReverseNums(10);
+
+
+function printReverseNums($n) {
+    $i = $n;
+    while ($i >= 1) {
+         echo $i . " ";
+         $i--;
+    }
+ }
+
+ printReverseNums(10);
+
 ?>
+
 </body>
 </html>
