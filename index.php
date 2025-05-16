@@ -9,10 +9,13 @@
 <?php
 $txt1 = "shalini kumari";
 $txt2 = "patna";
+$x = "John";
+$y = "rani";
+echo "Hello $x";
+echo "Hello $x";
 
 echo "<h2>$txt1</h2>";
 echo "<p>Study PHP at $txt2</p>";
 ?>
-
 </body>
 </html>
