@@ -59,7 +59,12 @@ $students = array(
        
         
     </tr>
-    <?php foreach ($students as  $i=> $s) {?>
+    <?php 
+    $a=0;
+    $salary=0;
+     foreach ($students as  $i=> $s) { 
+         $a=$a+$s['Age'];
+          $salary=$salary+$s['salary'];?>
     <tr>
         <td><?php  echo $s['name']; ?></td>
         <td><?php  echo $s['Age']; ?></td>
@@ -69,24 +74,17 @@ $students = array(
 </tr>
 <?php }?>
 
- <td>totla=<?php $names = ["Ajay", "Amit",  "Sunny", "Radha", "Nikhil", "Isreal", "shalini", "shalini", "shalini", "shalini", "shalini"];
- $total_names = count($names);
- echo "Total number of names: " . $total_names; 
-?> </td>
+
+<tr>
+    <td></td>
+    <td><?php echo $a/count($students);?></td>
+    <td><?php echo $salary;?></td>
+    <td></td>
+</tr>
+
+ 
 
 
-        <td>Average age=<?php $arr = [25, 28, 25, 27, 26, 22, 21, 21, 21, 21, 21];
-$average = calculateAverage($arr);
-
-echo number_format($average,2)
-?></td>
-         <td>Average salary=<?php $arr = [20000, 25000, 23000,  27000, 24000, 22000, 20000, 20000, 20000, 20000, 20000];
-$aversalary = calculateAverage($arr);
-
-echo  number_format($aversalary,2) 
-?></td>
- </td> 
-        <td>elig for vote=</td>
 <?php
 
 function calculateAverage($array) {
