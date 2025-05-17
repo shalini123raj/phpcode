@@ -69,7 +69,12 @@ $students = array(
 </tr>
 <?php }?>
 
- <td>totla=</td>
+ <td>totla=<?php $names = ["Ajay", "Amit",  "Sunny", "Radha", "Nikhil", "Isreal", "shalini", "shalini", "shalini", "shalini", "shalini"];
+ $total_names = count($names);
+ echo "Total number of names: " . $total_names; 
+?> </td>
+
+
         <td>Average age=<?php $arr = [25, 28, 25, 27, 26, 22, 21, 21, 21, 21, 21];
 $average = calculateAverage($arr);
 
