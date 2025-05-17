@@ -62,9 +62,18 @@ $students = array(
     <?php 
     $a=0;
     $salary=0;
+ 
      foreach ($students as  $i=> $s) { 
          $a=$a+$s['Age'];
-          $salary=$salary+$s['salary'];?>
+         $salary=$salary+$s['salary'];?>
+         $name = "Rakesh";
+    $age = 19;
+    if ($age >= 18) {
+        echo $name . ", yes";
+    } else {
+        echo $name . ", No ";
+    }
+       
     <tr>
         <td><?php  echo $s['name']; ?></td>
         <td><?php  echo $s['Age']; ?></td>
@@ -76,10 +85,11 @@ $students = array(
 
 
 <tr>
-    <td></td>
+    <td><?php echo $i+1?></td>
     <td><?php echo $a/count($students);?></td>
-    <td><?php echo $salary;?></td>
+    <td><?php echo $salary/count($students);?></td>
     <td></td>
+    
 </tr>
 
  
