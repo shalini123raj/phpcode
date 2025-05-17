@@ -37,16 +37,14 @@ $students = array(
     array("name" => "Sunny", "Age" => 25, "salary" => 23000 ),
     array("name" => "Radha", "Age" => 27, "salary" => 27000),
     array("name" => "Nikhil", "Age" => 26, "salary" => 24000 ),
-    array("name" => "isreal", "Age" => 22, "salary" => 22000 ),
+    array("name" => "Isreal", "Age" => 22, "salary" => 22000 ),
+    array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
+    array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
+    array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
+    array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
     array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
 );  
 
-foreach ($students as $student) {
-    foreach ($student as $key => $value) {
-        echo "$key => $value\n";
-    }
-    echo "\n";
-}
 
 ?>
 
@@ -57,48 +55,49 @@ foreach ($students as $student) {
         <th>name</th>
         <th>age</th>
         <th>salary</th>
-        <th>name</th>
-        <th>age</th>
-        <th>salary</th>
-        <th>name</th>
-        <th>age</th>
-        <th>salary</th>
-        <th>name</th>
-        <th>age</th>
-        <th>salary</th>
-         <th>name</th>
-        <th>age</th>
-        <th>salary</th>
-         <th>name</th>
-        <th>age</th>
-        <th>salary</th>
-        <th>name</th>
-        <th>age</th>
-        <th>salary</th>
+        <th>Elg.Vote</th>
+       
+        
     </tr>
+    <?php foreach ($students as  $i=> $s) {?>
     <tr>
-        <td>Ajay</td>
-        <td>25</td>
-        <td>20000</td>
-         <td>Amit</td>
-        <td>28</td>
-        <td>25000</td>
-         <td>Sunny</td>
-        <td>25</td>
-        <td>23000</td>
-        <td>Radha</td>
-        <td>27</td>
-        <td>27000</td>
-         <td>Nikhil</td>
-        <td>26</td>
-        <td>24000</td>
-         <td>Isreal</td>
-        <td>22</td>
-        <td>22000</td>
-         <td>shalini</td>
-        <td>21</td>
-        <td>21000</td> 
-    </tr>
+        <td><?php  echo $s['name']; ?></td>
+        <td><?php  echo $s['Age']; ?></td>
+        <td><?php  echo $s['salary']; ?></td>
+        <td><?php  echo "yes/no"; ?></td>
+        
+</tr>
+<?php }?>
+
+ <td>totla=</td>
+        <td>Average age=<?php $arr = [25, 28, 25, 27, 26, 22, 21, 21, 21, 21, 21];
+$average = calculateAverage($arr);
+
+echo number_format($average,2)
+?></td>
+         <td>Average salary=<?php $arr = [20000, 25000, 23000,  27000, 24000, 22000, 20000, 20000, 20000, 20000, 20000];
+$aversalary = calculateAverage($arr);
+
+echo  number_format($aversalary,2) 
+?></td>
+ </td> 
+        <td>elig for vote=</td>
+<?php
+
+function calculateAverage($array) {
+    $sum = 0;
+    $count = 0;
+    foreach ($array as $value) {
+        $sum += $value;
+        $count++;
+    }
+    return $sum / $count;
+}
+
+
+?>
+
+   
 </table>
 </body>
-</html>
+</html> 
