@@ -1,0 +1,40 @@
+
+table, th, td {
+  border:2px solid black;
+  border-collapse: collapse;
+  
+
+
+}
+th, td{
+    padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+th{
+    text-align: left;
+}
+.total-eligible{
+     font-size: 18px;
+      color:  #333;;
+}
+
+.highlight-green {
+      background-color:green; 
+      color:white;                
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .highlight-red {
+      background-color:red;  
+      color:blue;                
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  
+  
+}

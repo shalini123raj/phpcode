@@ -1,32 +1,18 @@
 <!DOCTYPE html>
-<html>
-<style>
-table, th, td {
-  border:2px solid black;
-  border-collapse: collapse;
 
-}
-th, td{
-    padding-top: 10px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 40px;
-}
-th{
-    text-align: left;
-}
-  
-}
-</style>
-<body>
- <h2> HTML table</h2>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <title>Total Yes Eligible</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <link rel="stylesheet" href="./style.css">
+
 </head>
+
 <body>
+
+    
 
 
 <?php
@@ -36,7 +22,7 @@ $students = array(
     array("name" => "Amit", "Age" => 0, "salary" => 25000 ),
     array("name" => "Sunny", "Age" => 14, "salary" => 23000 ),
     array("name" => "Radha", "Age" => 27, "salary" => 27000),
-    array("name" => "Nikhil", "Age" => 26, "salary" => 24000 ),
+    array("name" => "Nikhil", "Age" => 15, "salary" => 24000 ),
     array("name" => "Isreal", "Age" => 22, "salary" => 22000 ),
     array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
     array("name" => "shalini", "Age" => 5, "salary" =>20000 ),
@@ -70,7 +56,8 @@ $students = array(
          $a=$a+$s['Age'];
          $salary=$salary+$s['salary'];?>
        
-    <tr>
+    <tr class="<?php echo ($s['Age']>18)?'highlight-green':'highlight-red';?>" >
+     
         <td><?php  echo $s['name']; ?></td>
         <td><?php  echo $s['Age']; ?></td>
         <td><?php  echo $s['salary']; ?></td>
@@ -90,10 +77,8 @@ $students = array(
                    
                     $noCount++;
                 }
-                ?> 
-
-        
-     
+                ?>          
+ 
 </tr>
 <?php }?>
 
@@ -103,29 +88,13 @@ $students = array(
     <td><?php echo $a/count($students);?></td>
     <td><?php echo $salary/count($students);?></td>
     <td>
+
+   
     
-                <p>Total yes Eligible (yes):<?php echo $yesCount ?></p>    
-                <p>Total Not Eligible (No):<?php echo $noCount ?></p></td>   
+                <p style=color:blue>Total yes Eligible (yes):<?php echo $yesCount ?></p>    
+                <p style=color:blue>Total Not Eligible (No):<?php echo $noCount ?></p></td>
     
 </tr>
- 
- 
- 
-<?php
-
-function calculateAverage($array) {
-    $sum = 0;
-    $count = 0;
-    foreach ($array as $value) {
-        $sum += $value;
-        $count++;
-    }
-    return $sum / $count;
-}
-
-
-?>
-
    
 </table>
 </body>
