@@ -33,15 +33,15 @@ th{
 
 $students = array(
     array("name" => "Ajay", "Age" => 25, "salary" => 20000),
-    array("name" => "Amit", "Age" => 28, "salary" => 25000 ),
-    array("name" => "Sunny", "Age" => 25, "salary" => 23000 ),
+    array("name" => "Amit", "Age" => 0, "salary" => 25000 ),
+    array("name" => "Sunny", "Age" => 14, "salary" => 23000 ),
     array("name" => "Radha", "Age" => 27, "salary" => 27000),
     array("name" => "Nikhil", "Age" => 26, "salary" => 24000 ),
     array("name" => "Isreal", "Age" => 22, "salary" => 22000 ),
     array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
+    array("name" => "shalini", "Age" => 5, "salary" =>20000 ),
     array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
-    array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
-    array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
+    array("name" => "shalini", "Age" => 17, "salary" =>20000 ),
     array("name" => "shalini", "Age" => 21, "salary" =>20000 ),
 );  
 
@@ -62,24 +62,38 @@ $students = array(
     <?php 
     $a=0;
     $salary=0;
+    $yesCount = 0;
+    $noCount = 0;
+
  
      foreach ($students as  $i=> $s) { 
          $a=$a+$s['Age'];
          $salary=$salary+$s['salary'];?>
-         $name = "Rakesh";
-    $age = 19;
-    if ($age >= 18) {
-        echo $name . ", yes";
-    } else {
-        echo $name . ", No ";
-    }
        
     <tr>
         <td><?php  echo $s['name']; ?></td>
         <td><?php  echo $s['Age']; ?></td>
         <td><?php  echo $s['salary']; ?></td>
-        <td><?php  echo "yes/no"; ?></td>
+        <td><?php  
+         if ($s['Age'] >= 18) {
+        echo  "yes";
+    } else {
+        echo "No ";
+    }
+            ?>
+        </td>
+<?php
+                if ($s['Age'] >= 18) {
+                   
+                    $yesCount++;
+                } else {
+                   
+                    $noCount++;
+                }
+                ?> 
+
         
+     
 </tr>
 <?php }?>
 
@@ -88,13 +102,15 @@ $students = array(
     <td><?php echo $i+1?></td>
     <td><?php echo $a/count($students);?></td>
     <td><?php echo $salary/count($students);?></td>
-    <td></td>
+    <td>
+    
+                <p>Total yes Eligible (yes):<?php echo $yesCount ?></p>    
+                <p>Total Not Eligible (No):<?php echo $noCount ?></p></td>   
     
 </tr>
-
  
-
-
+ 
+ 
 <?php
 
 function calculateAverage($array) {
